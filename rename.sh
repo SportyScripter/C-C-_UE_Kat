@@ -54,6 +54,14 @@ replace_space_with_underscore_in_files() {
     done
 }
 
+
+# Znajdź wszystkie pliki z rozszerzeniem .c w bieżącym katalogu i podkatalogach
+replace_scanf_s_to_scanf(){find . -type f -name "*.c" -print0 | while IFS= read -r -d $'\0' file; do
+    # Użyj sed do zamiany wszystkich wystąpień scanf_s na scanf w znalezionym pliku
+    sed -i 's/scanf_s/scanf/g' "$file"
+done
+}
+replace_scanf_s_to_scanf
 rename_files_recursively
 remove_polish_characters
 replace_space_with_underscore_in_directories
