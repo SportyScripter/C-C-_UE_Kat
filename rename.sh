@@ -54,8 +54,6 @@ replace_space_with_underscore_in_files() {
     done
 }
 
-
-
 # Funkcja do zamiany scanf_s na scanf
 replace_scanf_s_to_scanf() {
     find . -type f -name "*.c" -print0 | while IFS= read -r -d $'\0' file; do
